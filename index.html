@@ -20,7 +20,7 @@
         window.googletag = window.googletag || { cmd: [] };
         var adSlot1, adSlot2;
         googletag.cmd.push(function () {
-            googletag.pubads().collapseEmptyDivs();
+            googletag.pubads().collapseEmptyDivs(true, true);
             adSlot1 = googletag.defineSlot('/21872722794/scanpoc', [300, 250], 'slot-1').addService(googletag.pubads());
             adSlot2 = googletag.defineSlot('/21872722794/scanpoc', [300, 250], 'slot-2').addService(googletag.pubads());
             googletag.pubads().enableSingleRequest();
@@ -163,7 +163,7 @@
         </script>
     </div> -->
 
-    <div id='slot-1' style='min-width: 300px; min-height: 250px;'>
+    <div id='slot-1'>
         <script>
             googletag.cmd.push(function () { googletag.display(adSlot1); });
         </script>
@@ -171,7 +171,7 @@
 
     <h3>Fully managed solution ==> </h3>
 
-    <div id='slot-2' style='min-width: 300px; min-height: 250px;'>
+    <div id='slot-2'>
         <script>
             googletag.cmd.push(function () { googletag.display(adSlot2); });
         </script>
@@ -192,7 +192,7 @@
     <span>automatically. We create, manage and renew your SSL certificates and also protect your apps from
         DDoS attacks.</span><br><br>
 
-    <ins class="scan-ad" data-publisher-categories='["sports", "entertainment"]' data-publisher-id="b98f3f58-d41b-4251-888a-9dda640ac29e"
+    <ins class="scan-ad" data-publisher-categories="sports" data-publisher-id="b98f3f58-d41b-4251-888a-9dda640ac29e"
         data-placement-id="scan_placement_test">
         <script src="https://scan-ads-cdn.sharechat.com/master/adDelivery.js"></script>
     </ins>
