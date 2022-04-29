@@ -205,16 +205,23 @@
     <script type="text/javascript">
         window.onload = function () {
             //Initializing Smart Script arguments
-            var oneLinkURL = "https://app.appsflyer.com/in.mohalla.sharechat";
+
+            // https://app.appsflyer.com/in.mohalla.video?pid=sharechat_int&af_siteid=scan&c=&af_sub1=e58cdac3-e78d-4d4c-b078-d25bb7d9d99d&af_sub2=scan_placement_test&af_c_id=M1p8sTPZ8&af_ad_id=_aWxVdNUm&af_click_lookback=7d&clickid=dc134472-f142-46a0-860b-c9add8af5ca0&advertising_id=438067738
+            // https://app.appsflyer.com/in.mohalla.video?utm_source=sharechat_int&siteid=scan&incoming_campaign=MOJ_Test_Native4_23rdMar22&af_sub1=e58cdac3-e78d-4d4c-b078-d25bb7d9d99d&af_sub2=scan_placement_test&af_c_id=M1p8sTPZ8&af_ad_id=_aWxVdNUm&af_click_lookback=7d&clickid=dc134472-f142-46a0-860b-c9add8af5ca0&advertising_id=438067738
+            var oneLinkURL = "https://app.appsflyer.com/in.mohalla.video";
             var mediaSource = { keys: ["inmedia", "utm_source"], defaultValue: "blinkdigital_sharechat" };
             var campaign = { keys: ["incoming_campaign", "utm_campaign"] };
             var channel = { keys: ["incoming_channel", "utm_channel"] };
             var ad = { keys: ["incoming_ad", "utm_ad"] };
             var adSet = { keys: ["incoming_adset", "utm_adset"] };
             var deepLinkValue = { keys: ["product_id", "page_name"] };
-            var custom1 = { paramKey: "af_prt", keys: ["partner"] };
-            var custom2 = { paramKey: "af_pageid", keys: ["pageid"] };
+            var custom1 = { paramKey: "af_siteid", keys: ["siteid"] };
+            var custom2 = { paramKey: "af_c_id", keys: ["af_c_id"] };
+            var custom3 = { paramKey: "af_ad_id", keys: ["af_ad_id"] };
+            var custom4 = { paramKey: "af_click_lookback", keys: ["af_click_lookback"] };
+            var custom5 = { paramKey: "advertising_id", keys: ["advertising_id"] };
             var afSub1 = { keys: ["af_sub1"] };
+            var afSub2 = { keys: ["af_sub2"] };
             var urlSkipList = ["af_r"];
             //Calling the function after embedding the code will be through a global parameter on the window object called window.AF_SMART_SCRIPT
             //Onelink URL is generated
@@ -227,8 +234,9 @@
                     ad: ad,
                     adSet: adSet,
                     deepLinkValue: deepLinkValue,
-                    afCustom: [custom1, custom2],
-                    afSub1: afSub1
+                    afCustom: [custom1, custom2, custom3, custom4, custom5],
+                    afSub1: afSub1,
+                    afSub2: afSub2
                 },
                 urlSkipList: urlSkipList
             })
